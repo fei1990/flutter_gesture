@@ -1,0 +1,15 @@
+source 'https://github.com/CocoaPods/Specs.git' #官方库
+source 'git@gitlab.adrd.sohuno.com:iphonenews/SBNComponentRepo.git'
+
+use_modular_headers!
+
+# ignore all warnings from all pods
+inhibit_all_warnings!
+
+flutter_application_path = '../my_flutter/'
+load File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')
+
+target 'my_ios' do
+  platform :ios, '9.0'
+  install_all_flutter_pods(flutter_application_path)
+end

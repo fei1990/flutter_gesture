@@ -1,0 +1,78 @@
+Flutter crash report; please file at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter pub get
+
+## exception
+
+FileSystemException: FileSystemException: Deletion failed, path = '/Users/wf/Desktop/flutter/my_flutter/.ios' (OS Error: Directory not empty, errno = 66)
+
+```
+#0      _Directory._deleteSync (dart:io/directory_impl.dart:208:7)
+#1      FileSystemEntity.deleteSync (dart:io/file_system_entity.dart:466:47)
+#2      ForwardingFileSystemEntity.deleteSync (package:file/src/forwarding/forwarding_file_system_entity.dart:72:16)
+#3      _deleteIfExistsSync (package:flutter_tools/src/project.dart:723:15)
+#4      IosProject._regenerateFromTemplateIfNeeded (package:flutter_tools/src/project.dart:459:5)
+#5      IosProject.ensureReadyForPlatformSpecificTooling (package:flutter_tools/src/project.dart:433:5)
+#6      FlutterProject.ensureReadyForPlatformSpecificTooling (package:flutter_tools/src/project.dart:213:17)
+<asynchronous suspension>
+#7      PackagesGetCommand.runCommand (package:flutter_tools/src/commands/packages.dart:130:23)
+<asynchronous suspension>
+#8      FlutterCommand.verifyThenRunCommand (package:flutter_tools/src/runner/flutter_command.dart:615:18)
+#9      _asyncThenWrapperHelper.<anonymous closure> (dart:async-patch/async_patch.dart:73:64)
+#10     _rootRunUnary (dart:async/zone.dart:1134:38)
+#11     _CustomZone.runUnary (dart:async/zone.dart:1031:19)
+#12     _FutureListener.handleValue (dart:async/future_impl.dart:139:18)
+#13     Future._propagateToListeners.handleValueCallback (dart:async/future_impl.dart:680:45)
+#14     Future._propagateToListeners (dart:async/future_impl.dart:709:32)
+#15     Future._completeWithValue (dart:async/future_impl.dart:524:5)
+#16     Future._asyncComplete.<anonymous closure> (dart:async/future_impl.dart:554:7)
+#17     _rootRun (dart:async/zone.dart:1126:13)
+#18     _CustomZone.run (dart:async/zone.dart:1023:19)
+#19     _CustomZone.runGuarded (dart:async/zone.dart:925:7)
+#20     _CustomZone.bindCallbackGuarded.<anonymous closure> (dart:async/zone.dart:965:23)
+#21     _microtaskLoop (dart:async/schedule_microtask.dart:43:21)
+#22     _startMicrotaskLoop (dart:async/schedule_microtask.dart:52:5)
+#23     _runPendingImmediateCallback (dart:isolate-patch/isolate_patch.dart:118:13)
+#24     _RawReceivePortImpl._handleMessage (dart:isolate-patch/isolate_patch.dart:175:5)
+```
+
+## flutter doctor
+
+```
+[32m[✓][39m Flutter (Channel stable, v1.12.13, on Mac OS X 10.15.3 19D76, locale zh-Hans-CN)
+    [32m•[39m Flutter version 1.12.13 at /Users/wf/development/flutter
+    [32m•[39m Framework revision cf37c2cd07 (6 months ago), 2019-11-25 12:04:30 -0800
+    [32m•[39m Engine revision b6b54fd606
+    [32m•[39m Dart version 2.7.0
+
+[32m[✓][39m Android toolchain - develop for Android devices (Android SDK version 28.0.3)
+    [32m•[39m Android SDK at /Users/wf/Library/Android/sdk
+    [32m•[39m Android NDK location not configured (optional; useful for native profiling support)
+    [32m•[39m Platform android-29, build-tools 28.0.3
+    [32m•[39m Java binary at: /Applications/Android Studio.app/Contents/jre/jdk/Contents/Home/bin/java
+    [32m•[39m Java version OpenJDK Runtime Environment (build 1.8.0_212-release-1586-b4-5784211)
+    [32m•[39m All Android licenses accepted.
+
+[32m[✓][39m Xcode - develop for iOS and macOS (Xcode 11.5)
+    [32m•[39m Xcode at /Applications/Xcode.app/Contents/Developer
+    [32m•[39m Xcode 11.5, Build version 11E608c
+    [32m•[39m CocoaPods version 1.9.1
+
+[32m[✓][39m Android Studio (version 3.6)
+    [32m•[39m Android Studio at /Applications/Android Studio.app/Contents
+    [32m•[39m Flutter plugin version 45.1.1
+    [32m•[39m Dart plugin version 192.8052
+    [32m•[39m Java version OpenJDK Runtime Environment (build 1.8.0_212-release-1586-b4-5784211)
+
+[32m[✓][39m VS Code (version 1.45.1)
+    [32m•[39m VS Code at /Applications/Visual Studio Code.app/Contents
+    [32m•[39m Flutter extension version 3.10.2
+
+[32m[✓][39m Connected device (2 available)
+    [32m•[39m iPhone                     • 00008020-000519310E30003A            • ios • iOS 13.3.1
+    [32m•[39m iPhone SE (2nd generation) • 7233FAFF-F05C-4ABE-BD7A-F5A2DDBC1FD4 • ios • com.apple.CoreSimulator.SimRuntime.iOS-13-5 (simulator)
+
+[32m•[39m No issues found!
+```
